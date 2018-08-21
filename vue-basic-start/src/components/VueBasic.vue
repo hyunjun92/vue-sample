@@ -21,10 +21,10 @@
 
 <script>
 export default {
-  name: "VueBasic",
+  name: 'VueBasic',
   data() {
     return {
-      msg: "Vue 기본 문법 맛보기"
+      msg: 'Vue 기본 문법 맛보기'
     };
   }
 };

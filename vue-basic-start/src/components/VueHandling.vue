@@ -17,11 +17,11 @@
 
 <script>
 export default {
-  name: "VueHandling",
+  name: 'VueHandling',
   data() {
     return {
-      msg1: "Vue 이벤트 리스너 [v-on]",
-      msg2: "Vue 양방향 바인딩 [v-model]"
+      msg1: 'Vue 이벤트 리스너 [v-on]',
+      msg2: 'Vue 양방향 바인딩 [v-model]'
     };
   },
   methods: {

@@ -10,17 +10,17 @@
 </template>
 
 <script>
-import VueCompList from "./VueCompList";
+import VueCompList from './VueCompList';
 export default {
-  name: "VueComp",
+  name: 'VueComp',
   data() {
     return {
-      msg1: "Vue 이벤트 리스너 [v-on]",
-      msg2: "Vue 양방향 바인딩 [v-model]"
+      msg1: 'Vue 이벤트 리스너 [v-on]',
+      msg2: 'Vue 양방향 바인딩 [v-model]'
     };
   },
   components: {
-    "todo-item": VueCompList
+    'todo-item': VueCompList
   }
 };
 </script>

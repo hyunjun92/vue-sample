@@ -13,13 +13,13 @@
 
 <script>
 export default {
-  name: "VueFor",
+  name: 'VueFor',
   data() {
     return {
       todos: [
-        { text: "JavaScript 배우기" },
-        { text: "Vue 배우기" },
-        { text: "무언가 멋진 것을 만들기" }
+        { text: 'JavaScript 배우기' },
+        { text: 'Vue 배우기' },
+        { text: '무언가 멋진 것을 만들기' }
       ]
     };
   }
