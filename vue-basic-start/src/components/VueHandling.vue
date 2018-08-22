@@ -27,9 +27,9 @@ export default {
   methods: {
     reverseMessage: function() {
       this.msg1 = this.msg1
-        .split("")
+        .split('')
         .reverse()
-        .join("");
+        .join('');
     }
   }
 };
