@@ -13,7 +13,7 @@
     </div>
     <div class="todo-list">
       <!-- todoList 컴포넌트: v-bind(디렉티브) Element 객체의 속성 동적 데이터 바인딩 -->
-      <todoList v-bind:todos="todos"></todoList>
+      <todoList v-bind:todos="todos" v-on:del-todo="delTodo"></todoList>
     </div>
   </div> 
 </template>
@@ -26,6 +26,7 @@ export default {
   // data
   data(){
     return {
+      title:'',
       todos:[
         {
           title: '운동하기'
@@ -48,7 +49,10 @@ export default {
 		    this.todos.push({title:title});
 				this.title = '';
       }
-		}
+		},
+    delTodo(todo) {
+       this.todos.splice(todo, 1);
+    }
 	},
   components: {
     'todoList': todoList
@@ -58,8 +62,8 @@ export default {
 
 <style scoped>
 .todoApp {
-  margin: auto;
-  width: 500px;
+    margin: auto;
+    width: 500px;
 }
 form {
     display: inline-block;
@@ -70,6 +74,7 @@ form {
     padding-bottom: 25px;
 }
 .todo-list {
+    width: 250px;
     text-align: left;
     margin-left: 130px;
 }
