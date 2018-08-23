@@ -1,37 +1,77 @@
 <template>
-  <div>
+  <div class="todoApp">
     <div class="form-group">
       <h1><span class="vue">Vue</span> To-Do
         <small>List</small>
       </h1>
       <form role="form">
-        <input type="text" class="form-control" placeholder="해야 할 일" name="task">
+        <input type="text" class="form-control" placeholder="해야 할 일"
+            v-model="title"
+		        v-on:keyup.enter="addTodo(title)">
       </form>
-      <button type="button" class="btn btn btn-primary">Add</button>
+      <button type="button" v-on:click="addTodo(title)" class="btn btn btn-primary">Add</button>
     </div>
-    <div></div>
-    <ul class="list-unstyled" id="todo"></ul>
-  </div>
+    <div class="todo-list">
+      <!-- todoList 컴포넌트: v-bind(디렉티브) Element 객체의 속성 동적 데이터 바인딩 -->
+      <todoList v-bind:todos="todos"></todoList>
+    </div>
+  </div> 
 </template>
 
 <script>
+// todoList 컴포넌트 import
+import todoList from '@/components/todoList'
 export default {
-  name: 'todoApp'
+  name: 'todoApp',
+  // data
+  data(){
+    return {
+      todos:[
+        {
+          title: '운동하기'
+        },
+        {
+          title: 'JAVA'
+        },
+        {
+          title: 'javascript'
+        },
+        {
+          title: '영어'
+        }
+      ]
+    }
+  },
+  methods:{
+		addTodo(title){
+      if(title){
+		    this.todos.push({title:title});
+				this.title = '';
+      }
+		}
+	},
+  components: {
+    'todoList': todoList
+  }
 }
 </script>
 
 <style scoped>
+.todoApp {
+  margin: auto;
+  width: 500px;
+}
 form {
     display: inline-block;
 }
 .form-group {
     text-align: center;
-    margin: 10em;
+    margin-top: 10em;
     padding-bottom: 25px;
 }
-#todo {
-    margin: 0 auto;
-    width: 500px;
+.todo-list {
+    text-align: left;
+    margin-left: 130px;
 }
 a.close {
     float: right;
