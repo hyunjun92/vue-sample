@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="form-group">
-      <h1>Vue To-Do
+      <h1><span class="vue">Vue</span> To-Do
         <small>List</small>
       </h1>
       <form role="form">
@@ -34,6 +34,9 @@ form {
     width: 500px;
 }
 a.close {
-  float: right;
+    float: right;
+}
+.vue {
+    color: #009900;
 }
 </style>
