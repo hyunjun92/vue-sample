@@ -26,7 +26,7 @@ export default {
   // data
   data(){
     return {
-      title:'',
+      title: '',
       todos:[
         {
           title: '운동하기'
@@ -44,14 +44,14 @@ export default {
     }
   },
   methods:{
-		addTodo(title){
+		addTodo (title){
       if(title){
-		    this.todos.push({title:title});
-				this.title = '';
+		    this.todos.push({ title: title })
+				this.title = ''
       }
 		},
-    delTodo(todo) {
-       this.todos.splice(todo, 1);
+    delTodo (todo) {
+       this.todos.splice(todo, 1)
     }
 	},
   components: {
