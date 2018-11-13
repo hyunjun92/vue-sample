@@ -2,10 +2,8 @@
   <div id="app" class="wrapper">
     <aside class="main_sidebar">
       <ul>
-          <li><i class="fa fa-desktop"></i><a href="#">테이블</a></li>
+          <li><i class="fa fa-desktop"></i><a href="/noticeBoard">공지사항</a></li>
           <li><i class="fa fa-folder"></i><a href="#">NULL</a></li>
-
-          <router-link to="/todoRestful" tag="button" class="btn btn-success">Restful</router-link>
       </ul>
     </aside>
     <div class="main">
@@ -27,7 +25,7 @@ body {
     margin:0px;
     padding:0px;
     box-sizing:border-box;
-    background:#e6e6e6;
+    background:#fff;
 }
 .main_sidebar {
     min-height:100vh;
@@ -95,7 +93,7 @@ body {
     float:right;
     color:#000;
     width:80%;
-    background:#e6e6e6;
+    background:#fff;
     min-height:100vh;
 }
 

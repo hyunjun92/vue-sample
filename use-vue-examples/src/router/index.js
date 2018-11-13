@@ -1,16 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import exampleTable from '@/components/exampleTable'
+import Axios from 'axios'
 
+import VueMomentLib from 'vue-moment-lib'
+
+import noticeBoard from '@/components/noticeBoard'
+
+Vue.use(VueMomentLib);
 Vue.use(Router)
+
+Vue.config.productionTip = false
+Vue.prototype.$http = Axios
 
 export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'exampleTable',
-      component: exampleTable
+      path: '/noticeBoard',
+      name: 'noticeBoard',
+      component: noticeBoard
     }
   ]
 })
