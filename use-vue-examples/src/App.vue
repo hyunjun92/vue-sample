@@ -3,7 +3,7 @@
     <aside class="main_sidebar">
       <ul>
           <li><i class="fa fa-desktop"></i><a href="/noticeBoard">공지사항</a></li>
-          <li><i class="fa fa-folder"></i><a href="#">NULL</a></li>
+          <li><i class="fa fa-folder"></i><a href="/order">주문</a></li>
       </ul>
     </aside>
     <div class="main">
@@ -87,7 +87,6 @@ body {
 .main_sidebar ul li.active:hover i {
     color:#fff;
 }
-
 .main {
     margin-top: 7%;
     float:right;
@@ -96,7 +95,6 @@ body {
     background:#fff;
     min-height:100vh;
 }
-
 .main-wrapper {
   border: solid 1px #b3b3b3;
   margin: auto;

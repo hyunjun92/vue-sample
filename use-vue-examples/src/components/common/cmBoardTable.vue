@@ -53,8 +53,6 @@ export default {
   props: ['items'],
   data() {
     return {
-      editIndex: null,
-      originalData: null,
       // boardList: [
       //   { subject: '이달의 공지사항', writer: '관리자', content: '공지사항 내용', hits: 131, regdate: '2018-08-11', istrash: 'T' },
       //   { subject: '12월 겨울', writer: '운영자', content: '겨울 내용', hits: 28, regdate: '2018-11-03', istrash: 'F' },

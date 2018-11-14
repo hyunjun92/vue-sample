@@ -19,7 +19,6 @@ export default {
     getBoardList () {
       this.$http.get('http://javalocal.mallstore.co.kr/sample/list.do?board=notice')
       .then((res) => {
-        console.log('>> res: ', res.data.data.boardList);
         this.items = res.data.data.boardList
       })
     }
@@ -32,7 +31,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style> 

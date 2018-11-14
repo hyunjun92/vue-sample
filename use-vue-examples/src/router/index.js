@@ -1,16 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Axios from 'axios'
-
-import VueMomentLib from 'vue-moment-lib'
 
 import noticeBoard from '@/components/noticeBoard'
+import order from '@/components/order'
 
-Vue.use(VueMomentLib);
 Vue.use(Router)
-
-Vue.config.productionTip = false
-Vue.prototype.$http = Axios
 
 export default new Router({
   mode: 'history',
@@ -19,6 +13,11 @@ export default new Router({
       path: '/noticeBoard',
       name: 'noticeBoard',
       component: noticeBoard
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: order
     }
   ]
 })

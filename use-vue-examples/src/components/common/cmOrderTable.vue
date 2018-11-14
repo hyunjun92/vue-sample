@@ -4,16 +4,16 @@
     <table class="table table-bordered mt-4">
       <thead class="thead-light">
         <tr>
-          <th width="1">#</th>
-          <th width="10%">Code</th>
-          <th width="10%">Name</th>
-          <th width="10%">Description</th>
-          <th width="10%">Qty</th>
-          <th width="10%">Unit</th>
-          <th width="10%">Price</th>
-          <th width="10%">Discount</th>
-          <th width="10%">Total</th>
-          <th width="150">Action</th>
+          <th width="5%">#</th>
+          <th width="10%">상품코드</th>
+          <th width="10%">상품명</th>
+          <th width="20%">상품설명</th>
+          <th width="10%">수량</th>
+          <th width="10%">가격</th>
+          <th width="10%">할인</th>
+          <th width="10%">상품 가격</th>
+          <th width="15%">
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -44,12 +44,6 @@
             </span>
           </td>
           <td>
-            <span v-if="editIndex !== index">{{ item.unit }}</span>
-            <span v-if="editIndex === index">
-              <input class="form-control form-control-sm" v-model="item.unit">
-            </span>
-          </td>
-          <td>
             <span v-if="editIndex !== index">{{ item.price }}</span>
             <span v-if="editIndex === index">
               <input class="form-control form-control-sm" type="number" v-model.number="item.price">
@@ -64,12 +58,12 @@
           <td><div class="text-right">{{ subtotal(item) | money }}</div></td>
           <td>
             <span v-if="editIndex !== index">
-              <button @click="edit(item, index)" class="btn btn-sm btn-outline-secondary mr-2">Edit</button>
-              <button @click="remove(item, index)" class="btn btn-sm btn-outline-secondary mr-2">Remove</button>
+              <button @click="edit(item, index)" class="btn btn-sm btn-outline-secondary mr-2">수정</button>
+              <button @click="remove(item, index)" class="btn btn-sm btn-outline-secondary mr-2">삭제</button>
             </span>
             <span v-else>
-              <button class="btn btn-sm btn-outline-secondary mr-2" @click="cancel(item)">Cancel</button>
-              <button class="btn btn-sm btn-outline-secondary mr-2" @click="save(item)">Save</button>
+              <button class="btn btn-sm btn-outline-secondary mr-2" @click="cancel(item)">취소</button>
+              <button class="btn btn-sm btn-outline-secondary mr-2" @click="save(item)">저장</button>
             </span>
           </td>
         </tr>
@@ -77,21 +71,21 @@
     </table>
 
     <div class="col-3 offset-9 text-right my-3">
-      <button v-show="!editIndex" @click="add" class="btn btn-sm btn-secondary">Add item</button>
+      <button v-show="!editIndex" @click="add" class="btn btn-sm btn-secondary">상품 추가</button>
     </div>
 
     <div class="col-3 offset-9">
 
       <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text">Sub total</span>
+          <span class="input-group-text">가격</span>
         </div>
         <input class="form-control form-control-sm text-right" disabled :value="this.allSubTotal | money">
       </div>
 
       <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text">Tax</span>
+          <span class="input-group-text">세금</span>
         </div>
         <input class="form-control form-control-sm" type="number" v-model.number="tax">
         <div class="input-group-append">
@@ -101,7 +95,7 @@
 
       <div class="input-group input-group-lg mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text">Total</span>
+          <span class="input-group-text">총 가격</span>
         </div>
         <input class="form-control form-control-sm text-right" disabled :value="this.total | money">
       </div>
@@ -112,18 +106,21 @@
 </template>
 
 <script>
+/**
+ * author-GitHub :  https://vuejsexamples.com/form-dinamis-dengan-menggunakan-vue-js/
+ */
 export default {
-  name: 'Uhuy',
+  name: 'cmOrderTable',
   filters: {
-    money: (value) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(value)
+    money: (value) => new Intl.NumberFormat(['ko-KR']).format(value)
   },
   data() {
     return {
       editIndex: null,
       originalData: null,
       items: [
-        { code: '111', name: 'Cuka', description: 'Cuka mahal', qty: 1, unit: null, price: 3500, discount: 10, },
-        { code: '222', name: 'Kubis', description: 'Kubis enak', qty: 2, unit: null, price: 5000, discount: 2, },
+        { code: 'G12031', name: '나이키-코르테즈', description: '나이키-코르테즈(클래스 레더)', qty: 1, price: 3500, discount: 10, },
+        { code: 'G26501', name: '나이키-에어맥스', description: '나이키-에어맥스(에어 95)', qty: 2, price: 5000, discount: 2, },
       ],
       tax: 10,
     }
