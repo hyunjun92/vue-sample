@@ -12,7 +12,6 @@
       <button type="button" v-on:click="addTodo(title)" class="btn btn btn-primary">Add</button>
     </div>
     <div class="todo-list">
-      <!-- todoList 컴포넌트: v-bind(디렉티브) Element 객체의 속성 동적 데이터 바인딩 -->
       <todoList v-bind:todos="todos" v-on:del-todo="delTodo"></todoList>
 
       <br><br>
@@ -49,7 +48,7 @@ export default {
           this.title = ''
 		    })
       }
-		},
+		},  
     delTodo (todo){
       this.$http.delete('http://localhost:3000/todoData/'+todo)
 			.then((res) => {
